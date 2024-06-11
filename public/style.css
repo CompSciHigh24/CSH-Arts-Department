@@ -1,0 +1,45 @@
+.hTag{
+  text-align: center;
+}
+
+body{
+  background-color: #3A5A40 !important;
+}
+
+#cshLogo{
+  border: 8px solid;
+  border-radius: 50%;
+  border-color: white;
+}
+
+h1{
+  color: white !important;
+}
+
+h2{
+  color: white !important;
+}
+
+h3{
+  color: white !important;
+}
+
+h4{
+  color: white !important;
+}
+
+h5{
+  color: white !important;
+}
+
+h6{
+  color: white !important;
+}
+
+p{
+  color: white !important;
+}
+
+.sotmTag{
+  color: black !important;
+}

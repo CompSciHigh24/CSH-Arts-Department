@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSH <%=teachers.subject%></title>
+  <style>
+    .card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 10px;
+      width: 300px;
+    }
+
+    .actions {
+      margin-top: 20px;
+    }
+  </style>
+
+  <link href="/style.css" rel="stylesheet" type="text/css" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://e87b5e8c-6997-4d7a-9a9f-b70bcc9fea30-00-30pglyxk4stbl.riker.replit.dev/">CSH Arts</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="https://e87b5e8c-6997-4d7a-9a9f-b70bcc9fea30-00-30pglyxk4stbl.riker.replit.dev/teachers/Art" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Art
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://e87b5e8c-6997-4d7a-9a9f-b70bcc9fea30-00-30pglyxk4stbl.riker.replit.dev/teachers/Art">CSH Art</a></li>
+              <li><a class="dropdown-item" href="https://e87b5e8c-6997-4d7a-9a9f-b70bcc9fea30-00-30pglyxk4stbl.riker.replit.dev/students">Student of the Month</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="https://e87b5e8c-6997-4d7a-9a9f-b70bcc9fea30-00-30pglyxk4stbl.riker.replit.dev/teachers/Dance" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dance
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://e87b5e8c-6997-4d7a-9a9f-b70bcc9fea30-00-30pglyxk4stbl.riker.replit.dev/teachers/Dance">CSH Dance</a></li>
+              <li><a class="dropdown-item" href="https://e87b5e8c-6997-4d7a-9a9f-b70bcc9fea30-00-30pglyxk4stbl.riker.replit.dev/Fearless.html">Fearless Vizion</a></li>
+              <li><a class="dropdown-item" href="https://e87b5e8c-6997-4d7a-9a9f-b70bcc9fea30-00-30pglyxk4stbl.riker.replit.dev/students">Student of the Month</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="https://e87b5e8c-6997-4d7a-9a9f-b70bcc9fea30-00-30pglyxk4stbl.riker.replit.dev/teachers/Dance" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Music
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://e87b5e8c-6997-4d7a-9a9f-b70bcc9fea30-00-30pglyxk4stbl.riker.replit.dev/teachers/Music">CSH Music</a></li>
+              <li><a class="dropdown-item" href="https://e87b5e8c-6997-4d7a-9a9f-b70bcc9fea30-00-30pglyxk4stbl.riker.replit.dev/students">Student of the Month</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://e87b5e8c-6997-4d7a-9a9f-b70bcc9fea30-00-30pglyxk4stbl.riker.replit.dev/ContactUs.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <h1 style="text-align: center;">Welcome to the <%= teachers.subject %> Page</h1>
+
+<h1 style="text-align: center;"><%= teachers.name %></h1>
+  
+<center>
+  
+  <img src= '<%=teachers.img%>'
+    width="400" 
+    height="400" />
+  
+  
+  <h1><b>Description:</b> <br> <%= teachers.description %></br></h1>
+
+<br>
+
+  <% if(teachers.subject == "Art"){ %>
+    <div class="container text-center">
+      <div class="row">
+        <% for(let i = 0; i < 11; i++){ %>
+        <div class="col">
+          <img src="/<%=teachers.subject%>Img<%=[i]%>.jpg"
+            width="300" 
+            height="300" >
+        </div>
+        <% } %>
+      </div>
+    </div>
+  <% } else if(teachers.subject == "Dance"){ %> 
+    <div class="container text-center">
+      <div class="row">
+        <% for(let i = 0; i < 30; i++){ %>
+        <div class="col">
+          <img src="/<%=teachers.subject%>Img<%=[i]%>.jpg"
+            width="300" 
+            height="300" >
+        </div>
+        <% } %>
+      </div>
+    </div>
+   <% } else if(teachers.subject == "Music"){ %> 
+     <h3><a href="https://youtube.com/playlist?list=PLikjVzBnClwgm5WhqL395Al7sIgAAGTZ-&si=LVqKJw4gMRyt-QpE">CSH Music Playlist</a></h3>
+     <br>
+     <div class="container text-center">
+       <div class="row">
+         <% for(let i = 0; i < 2; i++){ %>
+         <div class="col">
+           <img src="/<%=teachers.subject%>Img<%=[i]%>.jpg"
+             width="300" 
+             height="300" >
+         </div>
+         <% } %>
+       </div>
+     </div>
+  <%  } %>
+
+    <br>
+  
+  <!-- <div class="container text-center">
+    <div class="row">
+      <% for(let i = 0; i < 30; i++){ %>
+      <div class="col">
+        <img src="/<%=teachers.subject%>Img<%=[i]%>.jpg"
+          width="300" 
+          height="300" >
+      </div>
+      <% } %>
+    </div>
+  </div> -->
+  
+</center>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+  <script src="/script.js" defer></script>
+</body>
+
+
+</html>
