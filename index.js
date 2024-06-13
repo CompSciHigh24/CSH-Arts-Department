@@ -89,7 +89,7 @@ const students = mongoose.model("students", studentSchema);
 
 app.get("/teachers", (req, res) => {
   teachers.find().then((teacher) => {
-    res.render("teacher.ejs", { teachers: teacher });
+    res.status(200).render("teacher.ejs", { teachers: teacher });
   });
 });
 
@@ -109,7 +109,7 @@ app.post("/teachers", (req, res) => {
 
 app.get("/teachers/:name", (req, res) => {
   teachers.findOne({ subject: req.params.name }).then((subject) => {
-    res.render("class.ejs", { teachers: subject });
+    res.status(200).render("class.ejs", { teachers: subject });
   });
 });
 
@@ -150,7 +150,7 @@ app.delete("/teachers/:name", (req, res) => {
 // Find all students
 app.get("/students", (req, res) => {
   students.find({}).then((subject) => {
-    res.render("sotm.ejs", { students: subject });
+    res.status(200).render("sotm.ejs", { students: subject });
   });
 });
 
@@ -175,7 +175,11 @@ app.post("/students", upload.single('image'),  (req, res) => {
 });
 
 app.get("/", (res, req) => {
-  res.sendFile(__dirname + "/public/index.html");
+  res.status(200).sendFile(__dirname + "/public/index.html");
+});
+
+app.use((res, req, next) => {
+  res.status(404).sendFile(__dirname + "/public/404.html");
 });
 
 app.listen(3000, () => {
